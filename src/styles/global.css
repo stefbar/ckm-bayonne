@@ -1,9 +1,7 @@
 @import 'tailwindcss';
-@import './tokens.css';
 
-.container {
-	width: 100%;
-	max-width: var(--container-width);
-	margin-inline: auto;
-	padding-inline: var(--container-padding);
-}
+@import './base.css';
+@import './components.css';
+@import './layout.css';
+@import './tokens.css';
+@import './typography.css';

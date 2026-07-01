@@ -1,10 +1,71 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import Container from "../components/layout/Container.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import Hero from "../sections/Hero/Hero.astro";
+import ContentSection from "../sections/ContentSection/ContentSection.astro";
+import Card from "../components/ui/Card.astro";
+import Text from "../components/typography/Text.astro";
 ---
 
 <BaseLayout title="CKM Bayonne">
-    <Container>
-        <h1>CKM Bayonne</h1>
-    </Container>
+    <Hero />
+    <ContentSection title="L' Asso">
+
+        <Text>
+            CKM Bayonne est une association dédiée à la pratique du Krav Maga,
+            une méthode de self-défense système de combat accessible à toutes et à tous.
+        </Text>
+      
+        <Text>
+            Nos entraînements sont basés sur la discipline, la progression et la
+            mise en situation réelle afin de développer des réflexes efficaces.
+        </Text>
+
+        <Text>
+            Débutant ou confirmé, vous trouverez un cadre structuré
+            pour évoluer à votre rythme.
+        </Text>
+      
+        <Fragment slot="media">
+            <div style="
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: var(--color-text-muted);"
+            >
+                Photo dojo
+            </div>
+        </Fragment>
+
+    </ContentSection>
+
+    <ContentSection title="Les valeurs du club">
+
+        <div class="l-grid l-grid--3">
+      
+          <Card>
+            <Text><strong>Discipline</strong></Text>
+            <Text size="small" muted>
+              Un cadre structuré pour progresser efficacement.
+            </Text>
+          </Card>
+      
+          <Card>
+            <Text><strong>Rigueur</strong></Text>
+            <Text size="small" muted>
+              Des entraînements réalistes et progressifs.
+            </Text>
+          </Card>
+      
+          <Card>
+            <Text><strong>Accessibilité</strong></Text>
+            <Text size="small" muted>
+              Débutants et confirmés sont les bienvenus.
+            </Text>
+          </Card>
+      
+        </div>
+      
+      </ContentSection>
 </BaseLayout>

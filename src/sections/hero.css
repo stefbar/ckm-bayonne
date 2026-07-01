@@ -1,0 +1,81 @@
+/* ===========================
+   HERO BASE (mobile first)
+   =========================== */
+
+.hero {
+	display: grid;
+	gap: var(--space-12);
+}
+
+/* ===========================
+   CONTENT
+   =========================== */
+
+.hero__content {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-4);
+}
+
+.hero__badge {
+	display: inline-block;
+
+	font-size: 0.75rem;
+	letter-spacing: 0.15em;
+	text-transform: uppercase;
+
+	color: var(--color-primary);
+}
+
+.hero__text {
+	max-width: 55ch;
+	color: var(--color-text-muted);
+}
+
+/* ===========================
+   ACTIONS
+   =========================== */
+
+.hero__actions {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-3);
+	margin-top: var(--space-6);
+}
+
+/* ===========================
+   MEDIA
+   =========================== */
+
+.hero__media {
+	width: 100%;
+}
+
+.hero__image-placeholder {
+	width: 100%;
+	aspect-ratio: 4 / 3;
+
+	background: var(--color-surface);
+	border: 1px solid var(--color-border);
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	color: var(--color-text-muted);
+}
+
+/* ===========================
+   DESKTOP
+   =========================== */
+
+@media (min-width: 768px) {
+	.hero {
+		grid-template-columns: 1.1fr 0.9fr;
+		align-items: center;
+	}
+
+	.hero__actions {
+		flex-direction: row;
+	}
+}

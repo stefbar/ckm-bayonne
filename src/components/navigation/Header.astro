@@ -1,0 +1,49 @@
+---
+import Container from "../layout/Container.astro"
+import Button from "../ui/Button.astro"
+
+const nav = [
+  { label: "Accueil", href: "/" },
+  { label: "Le club", href: "/club" },
+  { label: "Cours", href: "/cours" },
+  { label: "Tarifs", href: "/tarifs" },
+  { label: "Contact", href: "/contact" },
+]
+---
+
+<header>
+  <Container>
+    <div class="flex items-center justify-between py-4">
+
+      <!-- Logo -->
+      <a href="/" class="font-bold text-lg tracking-tight">
+        CKM Bayonne
+      </a>
+
+      <!-- Nav -->
+      <nav class="hidden md:flex items-center gap-6">
+        {nav.map((item) => (
+          <a
+            href={item.href}
+            class="text-sm text-gray-700 hover:text-black transition"
+          >
+            {item.label}
+          </a>
+        ))}
+      </nav>
+
+      <!-- CTA -->
+      <div class="hidden md:block">
+        <Button href="/contact" size="sm">
+          Rejoindre
+        </Button>
+      </div>
+
+      <!-- Mobile placeholder -->
+      <button class="md:hidden text-sm">
+        Menu
+      </button>
+
+    </div>
+  </Container>
+</header>

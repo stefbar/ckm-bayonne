@@ -1,0 +1,18 @@
+---
+interface Props {
+  size?: "normal" | "small" | "medium" | "large"
+  muted?: boolean
+  class?: string
+}
+
+const {
+  size = "normal",
+  muted = false,
+  class: className = "",
+} = Astro.props
+
+---
+
+<p class:list={["text", `text--${size}`, muted && "text-muted", className]}>
+  <slot />
+</p>

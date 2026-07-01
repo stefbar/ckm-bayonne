@@ -1,0 +1,46 @@
+---
+import Section from "../../components/layout/Section.astro"
+import Heading from "../../components/typography/Heading.astro"
+import Text from "../../components/typography/Text.astro"
+import Button from "../../components/ui/Button.astro"
+---
+
+<Section size="large" >
+
+    <div class="hero">
+
+        <div class="hero__content">
+            <span class="hero__badge"></span>
+
+            <Heading level={1}>
+                Krav Maga à Bayonne
+            </Heading>
+
+            <Text size="large" class="hero__text">
+                Apprenez à vous défendre efficacement, développez votre condition physique
+                et rejoignez une communauté sérieuse et accessible à tous niveaux.
+            </Text>
+
+
+            <div class="hero__actions">
+                <Button href="/contact">
+                Rejoindre le club
+                </Button>
+
+                <Button href="/cours" variant="secondary">
+                Voir les cours
+                </Button>
+            </div>
+        </div>
+
+        <div class="hero__media">
+            <div class="hero__image-placeholder">
+                Image / Dojo / Action
+            </div>
+        </div>
+
+    </div>
+
+</Section>
+
+<link rel="stylesheet" href="./hero.css" />

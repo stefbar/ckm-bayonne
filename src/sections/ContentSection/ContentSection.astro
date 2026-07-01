@@ -1,0 +1,50 @@
+---
+import Section from "../../components/layout/Section.astro"
+import Container from "../../components/layout/Container.astro"
+import Heading from "../../components/typography/Heading.astro"
+import Text from "../../components/typography/Text.astro"
+
+interface Props {
+  title: string
+  align?: "left" | "center"
+  reverse?: boolean
+}
+
+const {
+  title,
+  align = "left",
+  reverse = false,
+} = Astro.props
+---
+
+<Section size="large">
+  <Container>
+
+    <div class:list={[
+      "content-section",
+      align === "center" && "content-section--center",
+      reverse && "content-section--reverse"
+    ]}>
+
+      <div class="content-section__text">
+
+        <Heading level={2}>
+          {title}
+        </Heading>
+
+        <div class="content-section__body">
+          <slot />
+        </div>
+
+      </div>
+
+      <div class="content-section__media">
+        <slot name="media" />
+      </div>
+
+    </div>
+
+  </Container>
+</Section>
+
+<link rel="stylesheet" href="./content-section.css" />

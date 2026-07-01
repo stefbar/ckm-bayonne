@@ -1,4 +1,3 @@
-
 ---
 interface Props {
     class?: string
@@ -7,6 +6,6 @@ interface Props {
 const { class: className = "" } = Astro.props
 ---
 
-<div class:list={["container", className]}>
+<div class={`l-container ${className}`}>
     <slot />
 </div>
