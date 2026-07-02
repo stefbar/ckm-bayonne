@@ -56,3 +56,27 @@
 	transform: translateY(-2px);
 	border-color: var(--color-primary);
 }
+
+/* ===========================
+   STAT
+   =========================== */
+
+.c-stat {
+	display: flex;
+	flex-direction: column;
+	gap: 0.4rem;
+}
+
+.c-stat__value {
+	color: var(--color-primary);
+	font-size: clamp(1.5rem, 3vw, 2rem);
+	font-weight: 700;
+	line-height: 1;
+}
+
+.c-stat__label {
+	color: var(--color-text-muted);
+	font-size: 0.78rem;
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+}

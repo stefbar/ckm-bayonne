@@ -1,0 +1,19 @@
+---
+interface Props {
+  reverse?: boolean;
+  class?: string;
+}
+
+const {
+  reverse = false,
+  class: className = "",
+} = Astro.props;
+---
+
+<div class:list={[
+  "l-sidebar",
+  reverse && "l-sidebar--reverse",
+  className,
+]}>
+  <slot />
+</div>

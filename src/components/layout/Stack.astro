@@ -1,0 +1,19 @@
+---
+interface Props {
+  gap?: "xs" | "sm" | "md" | "lg" | "xl";
+  class?: string;
+}
+
+const {
+  gap = "md",
+  class: className = "",
+} = Astro.props;
+---
+
+<div class:list={[
+  "l-stack",
+  `l-stack--${gap}`,
+  className,
+]}>
+  <slot />
+</div>

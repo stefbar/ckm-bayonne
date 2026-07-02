@@ -1,37 +1,59 @@
 ---
-import Section from "../../components/layout/Section.astro"
-import Heading from "../../components/typography/Heading.astro"
-import Text from "../../components/typography/Text.astro"
-import Button from "../../components/ui/Button.astro"
+import Section from "@components/layout/Section.astro"
+import Sidebar from "@components/layout/Sidebar.astro"
+import Stack from "@components/layout/Stack.astro"
+import SectionHeader from "@components/ui/SectionHeader.astro"
+import Cluster from "@components/layout/Cluster.astro"
+import Grid from "@components/layout/Grid.astro"
+import Stat from "@components/ui/Stat.astro"
+
+import Heading from "@components/typography/Heading.astro"
+import Text from "@components/typography/Text.astro"
+import Button from "@components/ui/Button.astro"
 ---
 
 <Section size="large" >
 
-    <div class="hero">
+    <Sidebar>
 
-        <div class="hero__content">
-            <span class="hero__badge"></span>
+        <Stack gap="lg">
+            
+            <SectionHeader
+                eyebrow="Self-défense à Bayonne"
+                title="Apprendre à se défendre ensemble."
+                description="Une discipline accessible à toutes et à tous quel que soit votre niveau."
+            />
 
-            <Heading level={1}>
-                Krav Maga à Bayonne
-            </Heading>
-
-            <Text size="large" class="hero__text">
-                Apprenez à vous défendre efficacement, développez votre condition physique
-                et rejoignez une communauté sérieuse et accessible à tous niveaux.
-            </Text>
-
-
-            <div class="hero__actions">
+            <Cluster>
                 <Button href="/contact">
-                Rejoindre le club
+                    Réserver un cours d'essai
                 </Button>
-
+    
                 <Button href="/cours" variant="secondary">
-                Voir les cours
+                    Découvrir l'asso
                 </Button>
-            </div>
-        </div>
+            </Cluster>
+
+            <Grid cols={3}>
+                <Stat
+                    value="13"
+                    label="années d'expérience"
+                />
+                <Stat
+                    value="3"
+                    label="cours par semaine"
+                />
+                <Stat
+                    value="18--->60+"
+                    label="âge des pratiquants"
+                />
+            </Grid>
+
+        </Stack>
+
+    </Sidebar>
+
+    <div class="hero">
 
         <div class="hero__media">
             <div class="hero__image-placeholder">
