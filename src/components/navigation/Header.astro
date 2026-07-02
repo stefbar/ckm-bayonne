@@ -1,49 +1,54 @@
 ---
 import Container from "../layout/Container.astro"
 import Button from "../ui/Button.astro"
+import { Image } from "astro:assets"
+import headerLogo from "../../assets/images/ckm-logo-442x437.png"
 
 const nav = [
-  { label: "Accueil", href: "/" },
-  { label: "Le club", href: "/club" },
-  { label: "Cours", href: "/cours" },
-  { label: "Tarifs", href: "/tarifs" },
-  { label: "Contact", href: "/contact" },
+    { label: "Le club", href: "/club" },
+    { label: "La méthode", href: "/methode" },
+    { label: "Les cours", href: "/cours" },
+    { label: "Témoignages", href: "/temoignages" },
+    { label: "FAQ", href: "/faq" },
 ]
 ---
 
-<header>
-  <Container>
-    <div class="flex items-center justify-between py-4">
+<header class="site-header">
 
-      <!-- Logo -->
-      <a href="/" class="font-bold text-lg tracking-tight">
-        CKM Bayonne
-      </a>
+    <Container>
+      
+        <div class="site-header__inner">
 
-      <!-- Nav -->
-      <nav class="hidden md:flex items-center gap-6">
-        {nav.map((item) => (
-          <a
-            href={item.href}
-            class="text-sm text-gray-700 hover:text-black transition"
-          >
-            {item.label}
-          </a>
-        ))}
-      </nav>
+            <!-- Logo -->
+            <a href="/" class="site-header__brand">
+                <Image src={headerLogo} alt="CKM Bayonne" width={40} height={40} />
+                CKM Bayonne
+            </a>
 
-      <!-- CTA -->
-      <div class="hidden md:block">
-        <Button href="/contact" size="sm">
-          Rejoindre
-        </Button>
-      </div>
+            <!-- Nav -->
+            <nav class="site-nav">
+                {nav.map((item) => (
+                    <a
+                        href={item.href}
+                        class="text-sm text-gray-700 hover:text-black transition"
+                    >
+                        {item.label}
+                    </a>
+                ))}
+            </nav>
 
-      <!-- Mobile placeholder -->
-      <button class="md:hidden text-sm">
-        Menu
-      </button>
+            <!-- CTA -->
+            <Button href="/contact" size="sm">
+                1er cours offert
+            </Button>
 
-    </div>
-  </Container>
+            <!-- Mobile placeholder -->
+            <button class="md:hidden text-sm">
+                Menu
+            </button>
+
+        </div>
+
+    </Container>
+
 </header>

@@ -2,26 +2,29 @@
 import Container from "../layout/Container.astro"
 
 interface Props {
-  id?: string
-  class?: string
-  size?: "normal" | "tight" | "large"
-  container?: boolean
+    id?: string
+    class?: string
+    size?: "normal" | "tight" | "large"
+    container?: boolean
+    style?: string
 }
 
 const {
-  id,
-  class: className = "", size = "normal", container = true
+    id,
+    class: className = "",
+    size = "normal",
+    container = true
 } = Astro.props
 
 ---
 
 <section
-  id={id}
-  class:list={["l-section", `l-section--${size}`, className]}
+    id={id}
+    class:list={["l-section", `l-section--${size}`, className]}
 >
-  {
-  container
-  ? (<Container><slot /></Container>)
-  : <slot />
-}
+    {
+        container
+        ? (<Container><slot /></Container>)
+        : <slot />
+    }
 </section>

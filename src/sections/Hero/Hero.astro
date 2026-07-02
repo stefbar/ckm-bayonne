@@ -1,5 +1,6 @@
 ---
 import Section from "@components/layout/Section.astro"
+import Container from "@components/layout/Container.astro"
 import Sidebar from "@components/layout/Sidebar.astro"
 import Stack from "@components/layout/Stack.astro"
 import SectionHeader from "@components/ui/SectionHeader.astro"
@@ -10,60 +11,66 @@ import Stat from "@components/ui/Stat.astro"
 import Heading from "@components/typography/Heading.astro"
 import Text from "@components/typography/Text.astro"
 import Button from "@components/ui/Button.astro"
+import { Image } from "astro:assets"
+import heroImage from "../../assets/images/ckm-hero-836x405.png"
 ---
 
-<Section size="large" >
+<Section
+    size="large"
+    class="hero"
+>
+<!-- <div class="hero" style={`background-image: url(${heroImage.src})`}> -->
+    <!-- <div class="hero"> -->
+        <Image
+            src={heroImage}
+            alt="Dojo CKM Bayonne"
+            priority
+            layout="full-width"
+            fit="cover"
+            class="hero__media"
+        />
+        <div class="hero__content">
 
-    <Sidebar>
+            <Stack gap="md">
 
-        <Stack gap="lg">
-            
-            <SectionHeader
-                eyebrow="Self-défense à Bayonne"
-                title="Apprendre à se défendre ensemble."
-                description="Une discipline accessible à toutes et à tous quel que soit votre niveau."
-            />
+                <Heading level={1} class="heading--display">
+                    Apprendre à<br/><span class="text--accent">se défendre</span><br/>ensemble.
+                </Heading>
 
-            <Cluster>
-                <Button href="/contact">
-                    Réserver un cours d'essai
-                </Button>
-    
-                <Button href="/cours" variant="secondary">
-                    Découvrir l'asso
-                </Button>
-            </Cluster>
+                <Text size="large" class="text--muted">
+                    Une association de Krav Maga ouverte à toutes et à tous, à partir de 18 ans. Pas de hiérarchie pesante, pas de sélection -- juste un dojo, des patenaires bienveillants et une méthode qui marche. Le premier cours est offert.
+                </Text>
 
-            <Grid cols={3}>
-                <Stat
-                    value="13"
-                    label="années d'expérience"
-                />
-                <Stat
-                    value="3"
-                    label="cours par semaine"
-                />
-                <Stat
-                    value="18--->60+"
-                    label="âge des pratiquants"
-                />
-            </Grid>
+                <Cluster>
+                    <Button href="/contact">
+                        Réserver un cours d'essai
+                    </Button>
+        
+                    <Button href="/cours" variant="secondary">
+                        Découvrir l'asso
+                    </Button>
+                </Cluster>
 
-        </Stack>
+                <Grid cols={3}>
+                    <Stat
+                        value="13"
+                        label="années d'expérience"
+                    />
+                    <Stat
+                        value="3"
+                        label="cours par semaine"
+                    />
+                    <Stat
+                        value="18--->60+"
+                        label="âge des pratiquants"
+                    />
+                </Grid>
 
-    </Sidebar>
+            </Stack>
 
-    <div class="hero">
-
-        <div class="hero__media">
-            <div class="hero__image-placeholder">
-                <img src="../../assets/images/ckm-hero-836x405.png" alt="Dojo" />
-                Image / Dojo / Action
-            </div>
         </div>
-
-    </div>
+    <!-- </div> -->
 
 </Section>
 
-<link rel="stylesheet" href="./hero.css" />
+<!-- <link rel="stylesheet" href="./hero.css" /> -->

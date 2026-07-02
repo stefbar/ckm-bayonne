@@ -33,3 +33,7 @@
 .text--lg {
 	font-size: var(--font-size-body-lg);
 }
+
+.text--accent {
+	color: var(--color-primary);
+}

@@ -44,6 +44,14 @@
 	--line-height-body: 1.7;
 	--line-height-heading: 1.15;
 
+	--font-size-display: clamp(3rem, 8vw, 6rem);
+
+	.heading--display {
+		font-size: var(--font-size-display);
+		line-height: 0.92;
+		text-transform: uppercase;
+	}
+
 	/* ==========================
 	   Colors
 	   ========================== */
@@ -59,7 +67,9 @@
 
 	--color-background: #0a0a0a;
 
-	--color-surface: #171717;
+	--color-surface-1: #0a0a0a;
+	--color-surface-2: #111111;
+	--color-surface-3: #171717;
 	--color-surface-hover: #1f1f1f;
 
 	--color-primary: rgb(200 40 26);
